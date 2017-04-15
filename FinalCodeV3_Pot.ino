@@ -50,9 +50,19 @@ void setup() {
   pinMode(led, OUTPUT);
   Serial.begin(9600);
   irrecv.enableIRIn();
-  Serial.println("<IR receiver: ENABLED>");
-  Serial.println("<Temp. sensor: ENABLED>");
-  Serial.println("<Fan: READY>\n\n");
+  Serial.println("Group 1-1 Auto-adjusting Fan\n");
+  delay(50);
+  Serial.print("<IR receiver: ");
+  delay(50);
+  Serial.println("READY>");
+  delay(50);
+  Serial.print("<Temp. sensor: ");
+  delay(50);
+  Serial.println("READY>");
+  delay(50);
+  Serial.print("<Fan: ");
+  delay(50);
+  Serial.println("READY>\n\n");
 }
 
 void autoManIR() {
