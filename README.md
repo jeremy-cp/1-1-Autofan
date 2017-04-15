@@ -4,5 +4,4 @@
 <h2> Features </h2>
 <p> - Adjust speed depending on tempurature <br/> - Infrared communication <br/> - Manual adjustment using potentiometer </p>
 <hr/>
-<h3>Link</h3>
-<a href="https://www.youtube.com/">link</a>
+<h3><a href="https://www.youtube.com/">Video</a></h3>
