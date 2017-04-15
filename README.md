@@ -5,3 +5,5 @@
 <p> - Adjust speed depending on tempurature <br/> - Infrared communication <br/> - Manual adjustment using potentiometer </p>
 <hr/>
 <h3><a href="https://www.youtube.com/watch?v=Kh5gfeZp5nU">Link to video</a></h3>
+<hr/>
+<p> Have yet to get PWM working with the TIP102 for more efficent processing and better overall control </p>
