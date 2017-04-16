@@ -1,5 +1,5 @@
 <h1> 1-1-Autofan </h1>
-<p> Autofan is an Arduino project that meets the requirements and constraits for ENGR 100 <br/> The lastest version of the code--version 4--adds enhanced compatibility with a potentiometer, including an auto-ajusting mode, along with more bug fixes. </p>
+<p> Autofan is an Arduino project that meets the requirements and constraits for ENGR 100 <br/> The lastest version of the code--version 4--adds enhanced compatibility with a potentiometer [including an auto-ajusting mode] along with more bug fixes. </p>
 <hr/>
 <h2> Features </h2>
 <p> - Adjust speed depending on tempurature <br/> - Infrared communication <br/> - Manual adjustment using potentiometer </p>
