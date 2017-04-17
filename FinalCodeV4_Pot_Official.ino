@@ -17,7 +17,14 @@
   6             FF5AA5
   7             FF42BD
   8             FF48B5
-  9             FF52AD */
+  9             FF52AD 
+
+Jeremy Perez, Team 1-1 ENGR 100-001
+
+This is the final version of the code 
+
+To be presented 4 Apr. 2017 */
+
 #include <dht.h>
 #define dht_dpin A0 //ANALOG 0
 dht DHT;
@@ -28,20 +35,20 @@ IRrecv irrecv(RECV_PIN);
 decode_results results;
 
 int motor = 11; //PWM/DIGITAL 11
-boolean autoMan = false;
-boolean motorOn = true;
-boolean power = false;
+boolean autoMan = false; //determines if in auto-adjust mode
+boolean motorOn = true; //dertermines of motor is active
+boolean power = false; 
 int autoMotorSpeed = 0;
 int manMotorSpeed = 0;
 int motorMan = 0;
 
 int button = 13; //DIGITAL 11
-int led = 9;
+int led = 9; //PWM/DIGITAL 9
 int t = 0;
 
 boolean track;
 
-int potentiometer = 5;
+int potentiometer = 5; //ANALOG 5
 boolean pot;
 
 void setup() {
@@ -50,7 +57,7 @@ void setup() {
   pinMode(led, OUTPUT);
   Serial.begin(9600);
   irrecv.enableIRIn();
-  Serial.println("Group 1-1 Auto-adjusting Fan\n");
+  Serial.println("ENGR 100 Team 1-1 Auto-adjusting Fan\n");
   delay(50);
   Serial.print("<IR receiver: ");
   delay(50);
@@ -69,14 +76,28 @@ void autoManIR() {
   switch (results.value) {
     case 0xFF38C7:
       autoMan = !autoMan;
-      Serial.print("Button; 5 |   AUTO/MAN: ");
-      Serial.println(autoMan);
+      Serial.print("Button; 5 |   AUTO: ");
+      if(autoMan==false)
+      {
+      Serial.println("ON");
+      }
+      else
+      {
+      Serial.println("OFF"); 
+      }
       irrecv.resume();
       break;
     case 0x488F3CBB:
       autoMan = !autoMan;
-      Serial.print("Button; 5 |   AUTO/MAN: ");
-      Serial.println(autoMan);
+      Serial.print("Button; 5 |   AUTO: ");
+      if(autoMan==false)
+      {
+      Serial.println("ON");
+      }
+      else
+      {
+      Serial.println("OFF"); 
+      }
       irrecv.resume();
       break;
     case 0xFFA25D:
@@ -246,7 +267,7 @@ void loop() {
       Serial.print("C   |  ");
       Serial.print("analog value = ");
       Serial.println(temp);
-      delay(100);
+      //delay(100);
     }
     else if (autoMan == false && motorOn == true)
     {
@@ -290,7 +311,7 @@ void loop() {
         analogWrite(motor, 255);
         delay(400);
         analogWrite(motor, 0);
-        delay(2);
+        delay(10);
         analogWrite(led, 175);
         // Serial.println(potRead);
       }
